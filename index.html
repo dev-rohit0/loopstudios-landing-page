@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Loopstudios landing page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<!-- About
+Careers
+Events
+Products
+Support
+
+Immersive experiences that deliver
+
+The leader in interactive VR
+
+Founded in 2011, Loopstudios has been producing world-class virtual reality
+projects for some of the best companies around the globe. Our award-winning
+creations have transformed businesses through digital experiences that bind
+to their brand.
+
+Our creations
+
+See all
+
+Deep earth
+Night arcade
+Soccer team VR
+The grid
+From up above VR
+Pocket borealis
+The curiosity
+Make it fisheye
+
+About
+Careers
+Events
+Products
+Support
+
+© 2021 Loopstudios. All rights reserved. -->
+
+<body class="overflow-x-hidden">
+  <main>
+    <div x-data="{open:false}" class="landing bg-[url(./images/mobile/image-hero.jpg)] md:bg-[url(./images/desktop/image-hero.jpg)] bg-cover w-screen h-screen md:h-[80vh] md:bg-cover md:bg-center">
+      <nav class="flex justify-between items-center mx-6 py-8 md:justify-around md:space-x-44">
+        <img src="./images/logo.svg" alt="logo">
+        <button class="md:hidden" @click="open=!open,console.log('clicked')">
+          <img x-show="!open" :class="hidden" src="./images/icon-hamburger.svg" alt="icon-hamburger">
+          <img  x-show="open" :class="hidden" src="./images/icon-close.svg" alt="icon-close" class="">
+          
+        </button>
+        <div class="flex-row justify-evenly items-center space-x-4  text-white font-alata text-lg  hidden md:flex">
+            <h3 class="hover:cursor-pointer hover:scale-110">Home</h3>
+            <h3 class="hover:cursor-pointer hover:scale-110">Careers</h3>
+            <h3 class="hover:cursor-pointer hover:scale-110">Events</h3>
+            <h3 class="hover:cursor-pointer hover:scale-110">Products</h3>
+            <h3 class="hover:cursor-pointer hover:scale-110">Support</h3>
+        </div>
+      </nav>
+      <div x-cloak x-show="open" transition:enter="transition ease-in-out duration-300" x-transition:enter-start="opacity-0 transform scale-x-0 translate-x-1/2" x-transition:enter-end="opacity-100 transform scale-x-100 translate-x-0" x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100 transform scale-x-100 translate-x-0" x-transition:leave-end="opacity-0 transform scale-x-0 translate-x-1/2" class="bg-black w-screen h-[101vh] text-white uppercase -mt-[95px] pt-[10rem]  flex flex-col px-10 space-y-8 font-josefin text-2xl overflow-hidden">
+        <h3 class="text-left">ABOUT</h3>
+        <h3 class="text-left">CAREERS</h3>
+        <h3 class="text-left">EVENTS</h3>
+        <h3 class="text-left">PRODUCTS</h3>
+        <h3 class="text-left">SUPPORT</h3>
+
+      </div>
+      <div x-cloak x-show="!open" x-tarnsition class="bg-transparent text-white uppercase border-2  border-white mx-6 mt-[35%] md:border-0 sm:mt-[20%] md:flex md:justify-start md:items-center md:mt-[8rem] ">
+        <h1 class="font-josefin font-light text-[2.7rem] text-left leading-none my-4 mx-4 sm:text-6xl md:text-5xl md:mx-8 md:w-[500px] md:border-2 md:border-white md:p-8 md:ml-[8rem] xl:ml-[12rem] ">Immersive experiences that deliver</h1>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="hero w-screen h-screen md:h[40vh]">
+      <div class="mx-6 md:mx-10 xl:flex justify-center items-center xl:absolute xl:mx-60 ">
+        <div>
+
+          <img src="./images/mobile/image-interactive.jpg" alt="image-interactive" class="mt-20 mx-auto md:hidden">
+          <img src="./images/desktop/image-interactive.jpg" alt="image-interactive" class="mt-20 mx-auto hidden  md:block ">
+        </div>
+        <div class=" xl:relative xl:bg-white xl:w-[500px] xl:mt-[20rem] xl:-ml-[100px] ">
+          <h2 class="font-josefin text-3xl uppercase text-center mt-10 xl:px-14 xl:text-left xl:pl-10">the leader in interactive VR</h2>
+          <p class="font-alata text-loop text-center mt-4 mx-4 xl:px-10 xl:text-left xl:py-8 xl:pl-10">Founded in 2011, Loopstudios has been producing world-class virtual reality
+            projects for some of the best companies around the globe. Our award-winning
+            creations have transformed businesses through digital experiences that bind
+            to their brand.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="creations w-screen mt-0">
+      <div class="mb-12 md:mt-10 lg:flex lg:justify-between lg:items-center lg:mx-20 xl:mx-[15vw]">
+        <h1 class="uppercase font-josefin text-center text-3xl ">our creations</h1>
+        <button class="bg-white tracking-[0.2rem] text-black font-josefin text-loop px-10 py-2 border-2 font-medium border-black hover:bg-black hover:text-white hidden lg:block">SEE ALL</button>
+      </div>
+      <div class="flex flex-row justify-center flex-wrap gap-4 xl:mx-[10vw] ">
+        <div class="w-[340px] h-[138] bg-[url(./images/mobile/image-deep-earth.jpg)] lg:w-[256px] lg:h-[450px] lg:bg-[url(./images/desktop/image-deep-earth.jpg)] bg-cover" >
+            <!-- <img src="./images/mobile/image-deep-earth.jpg" alt="image-deep-earth" class="absolute w-[340px] h-[138]"> -->
+            <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-10 ">DEEP <br> EARTH</h1>
+        </div>
+        <div class="w-[340px] h-[138] bg-[url(./images/mobile/image-night-arcade.jpg)] lg:w-[256px] lg:h-[450px] lg:bg-[url(./images/desktop/image-night-arcade.jpg)] bg-cover"  >
+          <!-- <img src="./images/mobile/image-night-arcade.jpg" alt="image-night-arcade" class="absolute w-[340px] h-[138]"> -->
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-16 z-50 ">NIGHT <br> ARCADE</h1>
+        </div>
+        <div class="bg-[url(./images/mobile/image-soccer-team.jpg)] w-[340px] h-[138px] lg:w-[256px] lg:h-[450px] bg-cover lg:bg-[url(./images/desktop/image-soccer-team.jpg)]">
+          <!-- <img src="./images/mobile/image-soccer-team.jpg" alt="image-soccer-team" class="absolute w-[340px] h-[138]"> -->
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-14 z-100 ">SOCCER <br> TEAM VR</h1>
+        </div>
+        <div class="bg-[url(./images/mobile/image-grid.jpg)] w-[340px] h-[138px] bg-cover lg:w-[256px] lg:h-[450px] lg:bg-[url(./images/desktop/image-grid.jpg)]">
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-14 z-100 ">THE <br> GRID</h1>
+        </div>
+        <div class="bg-[url(./images/mobile/image-from-above.jpg)] w-[340px] h-[138px] lg:w-[256px] lg:h-[450px] lg:bg-[url(./images/desktop/image-from-above.jpg)] bg-cover">
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-14 z-100 ">FROM UP  <br> ABOVE VR</h1>
+        </div>
+        <div class="bg-[url(./images/mobile/image-pocket-borealis.jpg)] w-[340px] h-[138px] lg:w-[256px] lg:h-[450px] lg:bg-[url(./images/desktop/image-pocket-borealis.jpg)] bg-cover">
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-14 z-100 ">POCKET  <br> BOREALIS</h1>
+        </div>
+        <div class="bg-[url(./images/mobile/image-curiosity.jpg)] w-[340px] h-[138px] lg:w-[256px] lg:h-[450px] bg-cover lg:bg-[url(./images/desktop/image-curiosity.jpg)]">
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-14 z-100 ">THE  <br> CURIOSITY</h1>
+        </div>
+        <div class="bg-[url(./images/mobile/image-fisheye.jpg)] w-[340px] h-[138px] lg:w-[256px] lg:h-[450px] bg-cover lg:bg-[url(./images/desktop/image-fisheye.jpg)]">
+          <h1 class="text-white font-josefin text-3xl text-left mx-4 mt-14 z-100 ">MAKE IT  <br> FISHEYE</h1>
+        </div>
+      </div>
+      <div class="flex justify-center items-center my-8">
+
+        <div class="mx-auto mb-16">
+          <button class="bg-white tracking-[0.2rem] text-black font-josefin text-loop px-10 py-2 border-2 font-medium border-black hover:bg-black hover:text-white lg:hidden">SEE ALL</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-black text-white font-alata flex flex-col justify-center items-center text-xl md:flex-row md:justify-around">
+    <span class="md:flex md:flex-col justify-start items-start">
+
+      <div class="my-12 md:my-8">
+        <img src="./images/logo.svg" alt="logo">
+      </div>
+      <div class="text-center flex flex-col space-y-8 mb-12 md:flex-row md:space-x-4 md:space-y-0">
+        <h3 class="text-center hover:cursor-pointer">About</h3>
+        <h3 class="text-center hover:cursor-pointer">Careers</h3>
+        <h3 class="text-center hover:cursor-pointer">Events</h3>
+        <h3 class="text-center hover:cursor-pointer">Products</h3>
+        <h3 class="text-center hover:cursor-pointer">Support</h3>
+      </div>
+    </span>
+    <span class="md:flex md:flex-col justify-end items-end">
+
+      <div class="flex justify-center items-center space-x-4 my-4">
+        <img src="./images/icon-facebook.svg" alt="facebook">
+        <img src="./images/icon-twitter.svg" alt="twitter">
+        <img src="./images/icon-pinterest.svg" alt="pinterest">
+        <img src="./images/icon-instagram.svg" alt="instagram">
+      </div>
+      <div class="text-center text-veryDarkGray text-sm mb-16 mx-6 md:mx-0 md:text-right md:text-[20px]">
+        <h2> &copy; 2022 Loopstudios. All rights reserved.</h2>
+      </div>
+    </span>
+  </footer>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
+<!-- <div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+  Coded by <a href="#">Your Name Here</a>.
+</div> -->
